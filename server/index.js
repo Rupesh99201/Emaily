@@ -1,13 +1,17 @@
 const express = require("express");
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const mongoose = require("mongoose");
+const keys = require("./config/keys");
+require("./models/User");
+require("./services/passport");
+
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-passport.use(new GoogleStrategy());
+require("./routes/authRoutes")(app);
 
 app.get("/", (req, res) => {
-  res.send({ bye: "buddy" });
+  res.send({ bye: "buddy hi" });
   res.end;
 });
 
