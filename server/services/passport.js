@@ -13,7 +13,7 @@ passport.use(
       callbackURL: "/auth/google/callback",
     },
     (accessToken, refreshToken, profile, done) => {
-      new User({ googleId: profile.id }).save();
+      const user = new User({ googleId: profile.id }).save();
       console.log("Profile ID", profile.id);
     }
   )
