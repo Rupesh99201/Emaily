@@ -24,6 +24,7 @@
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "stripe": "^8.91.0"
   }
 }
